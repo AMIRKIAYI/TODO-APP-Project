@@ -22,6 +22,7 @@ document.getElementById("button-addon2").addEventListener("click",function(){
         
     }
     inputfield.value = "";
+    store()
 
 })
 orderedList.addEventListener("click",function(e){
@@ -42,9 +43,18 @@ document.addEventListener("keydown", function(e){
         inputfield.value = "";
        
     }
+    store()
     
     
 })
+
+function store(){
+    localStorage.setItem("data", orderedList.innerHTML)
+}
+function read(){
+    orderedList.innerHTML = localStorage.getItem("data")
+}
+read()
 
 
 
